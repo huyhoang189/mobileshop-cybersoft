@@ -12,6 +12,7 @@ const resolver = {
       return getAllRoles();
     },
     roleById: (parent, args, context, info) => {
+      console.log(args);
       return getRoleById(args.id);
     },
   },

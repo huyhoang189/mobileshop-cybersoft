@@ -12,7 +12,7 @@ datasource db {
 
 model Users {
   id Int @id @default(autoincrement()) //pk
-  name String 
+  name String @db.LongText
   username String @unique
   password String
   phone_number String
@@ -26,3 +26,30 @@ model Roles {
   user Users[]
 }
 
+model Manufactures {
+  id Int @id @default(autoincrement())
+  name String @unique
+  description String @db.LongText
+  thumbail String @db.LongText
+  serie Series[]
+}
+
+model Series {
+  id Int @id @default(autoincrement())
+  name String @unique 
+  sort_name String @unique
+  manufacture_id Int 
+  manufacture Manufactures @relation(fields : [manufacture_id], references : [id])
+  product Products[]
+}
+
+model Products {
+  id Int @id @default(autoincrement())
+  name String @unique 
+  thumbail String @db.LongText
+  description String @db.LongText
+  price String @default("0")
+  count Int  @default(0)
+  serie_id Int
+  serie Series @relation(fields : [serie_id], references : [id])
+}
