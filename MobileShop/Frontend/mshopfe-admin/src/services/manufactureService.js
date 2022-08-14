@@ -1,6 +1,7 @@
+import { private_url } from "../commonConstant";
 const axios = require("axios");
 
-const endpoint = process.env.REACT_PATH_ADMIN;
+const endpoint = private_url;
 const headers = {
   "content-type": "application/json",
   authorization: JSON.parse(localStorage.getItem("jwt")),

@@ -9,21 +9,27 @@ import Options from "./containers/Option/Options";
 import Page404 from "./containers/Pages/page404";
 import Roles from "./containers/Role/Roles";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import authSlice from "./redux/auth/authSlice";
+
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(authSlice.actions.checkAuthorization());
-  });
-  const isLoggedIn = localStorage.getItem("jwt");
-  console.log(process.env);
+  // const { idToken } = useSelector((state) => state.auth);
+
+  // const [isLogin, setIsLogin] = useState(false);
+
+  // useEffect(() => {
+  //   if (idToken) {
+  //     setIsLogin(true);
+  //   }
+  // }, [idToken]);
+
+  let idToken = localStorage.getItem("jwt");
+
   return (
     <Routes>
       <Route
         path="/"
-        element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />}
+        element={idToken ? <Dashboard /> : <Navigate to="/login" />}
       >
+        <Route index element={<Manufactures />} />
         <Route path="manufactures" element={<Manufactures />} />
         <Route path="users" element={<Users />} />
         <Route path="roles" element={<Roles />} />

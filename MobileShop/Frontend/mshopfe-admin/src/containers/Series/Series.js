@@ -26,7 +26,7 @@ export default function Series() {
   const { manufactures } = useSelector((state) => state.manufacture);
 
   React.useEffect(() => {
-    document.title = "Dòng điện thoại";
+    document.title = "Dòng điện thoại - mShop";
     dispatch(manufactureSlice.actions.getManufactures());
     dispatch(serieSlice.actions.getSeries());
   }, [dispatch]);

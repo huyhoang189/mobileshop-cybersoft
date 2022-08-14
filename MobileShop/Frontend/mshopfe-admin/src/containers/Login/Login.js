@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useHistory } from "react-router-dom";
 import { Button, Form, Input, Row, Col, Typography, Image } from "antd";
 import BgSignin from "../../assets/bg-signin.jpg";
 import Logo from "../../assets/mshop.png";
@@ -14,10 +14,8 @@ export default function Login() {
   };
 
   useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/manufactures", { replace: true });
-    }
-  }, [isLoggedIn]);
+    window.document.title = "Đăng nhập - mShop";
+  }, []);
 
   const onFinishFailed = (errorInfo) => {};
 

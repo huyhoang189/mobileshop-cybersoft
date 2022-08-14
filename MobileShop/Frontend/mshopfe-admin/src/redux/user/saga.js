@@ -40,7 +40,6 @@ function* handUser({ payload }) {
 function* getAllRoles() {
   try {
     const response = yield call(getRoles);
-    console.log(response);
     const data = response.data.data.roles;
     if (data) {
       yield put(userSlice.actions.getRolesSuccess(data));

@@ -4,7 +4,6 @@ import { getRoles, addRole, deleteRole } from "../../services/roleService";
 function* getAllRoles() {
   try {
     const response = yield call(getRoles);
-    console.log(response);
     const data = response.data.data.roles;
     if (data) {
       yield put(roleSlice.actions.getRolesSuccess(data));

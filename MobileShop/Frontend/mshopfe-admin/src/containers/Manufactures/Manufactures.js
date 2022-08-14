@@ -25,7 +25,7 @@ export default function Manufactures() {
   );
 
   React.useEffect(() => {
-    document.title = "Hãng điện thoại";
+    document.title = "Hãng điện thoại - mShop";
     dispatch(manufactureSlice.actions.getManufactures());
   }, [dispatch]);
 

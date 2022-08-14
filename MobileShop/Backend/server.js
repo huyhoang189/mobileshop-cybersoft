@@ -7,6 +7,7 @@ app.use(bodyParser({ limit: "50mb" }));
 const schemaAdmin = require("./schema/admin/index");
 const schemaUser = require("./schema/user/index");
 const PORT = process.env.PORT || 5000;
+// console.log(process.env);
 
 const { graphqlHTTP } = require("express-graphql");
 const { authenticate } = require("./middlewares/auth/authenticate.auth");

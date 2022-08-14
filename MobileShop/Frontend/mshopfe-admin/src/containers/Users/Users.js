@@ -22,7 +22,7 @@ export default function Users() {
   );
 
   React.useEffect(() => {
-    document.title = "Người dùng";
+    document.title = "Người dùng - mShop";
     dispatch(userSlice.actions.getUsers());
     dispatch(userSlice.actions.getRoles());
   }, [dispatch]);

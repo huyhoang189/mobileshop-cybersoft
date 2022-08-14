@@ -1,6 +1,7 @@
+import { public_url } from "../commonConstant";
 const axios = require("axios");
 
-const endpoint = "http://localhost:3000/api/v1/user/";
+const endpoint = public_url;
 const headers = {
   "content-type": "application/json",
 };

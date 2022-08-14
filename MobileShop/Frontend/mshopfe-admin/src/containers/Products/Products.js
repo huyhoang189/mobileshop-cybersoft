@@ -34,7 +34,7 @@ export default function Products() {
   } = useSelector((state) => state.product);
 
   React.useEffect(() => {
-    document.title = "Điện thoại";
+    document.title = "Điện thoại - mShop";
     dispatch(productSlice.actions.getManufactures());
     dispatch(productSlice.actions.getProducts());
   }, [dispatch]);

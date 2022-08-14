@@ -21,7 +21,7 @@ export default function Roles() {
   );
 
   React.useEffect(() => {
-    document.title = "Phân quyền";
+    document.title = "Phân quyền - mShop";
     dispatch(roleSlice.actions.getRoles());
   }, [dispatch]);
 

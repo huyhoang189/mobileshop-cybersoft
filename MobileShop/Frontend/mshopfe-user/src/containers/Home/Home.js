@@ -27,7 +27,7 @@ export default function Home() {
     (state) => state.home
   );
   React.useEffect(() => {
-    document.title = "Trang chủ";
+    document.title = "Tìm kiếm - mShop";
     dispatch(homeSlice.actions.getManufactures());
     dispatch(homeSlice.actions.getProducts());
   }, [dispatch]);
@@ -67,7 +67,12 @@ export default function Home() {
 
   return (
     <div>
-      <Row gutter={16}>
+      <Row
+        gutter={16}
+        style={{
+          margin: "15px 30px",
+        }}
+      >
         <Col className="gutter-row" span={6}>
           <Row style={{ marginTop: "8px" }}>
             <Input

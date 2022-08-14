@@ -2,16 +2,16 @@ import { DashboardWrapper } from "./Dashboard.style";
 import { Breadcrumb, Layout, Menu, Image } from "antd";
 import React from "react";
 import Logo from "../../assets/mshop.png";
-import Home from "../Home/Home";
+import { Outlet, useNavigate } from "react-router-dom";
 const { Header, Content, Footer } = Layout;
-
 export default function Dashboard() {
+  const navigate = useNavigate();
   return (
     <DashboardWrapper>
       <Layout>
         <Header
           style={{
-            position: "fixed",
+            position: "",
             zIndex: 1,
             width: "100%",
           }}
@@ -22,29 +22,26 @@ export default function Dashboard() {
               width={150}
               preview={false}
               style={{ padding: "5px" }}
+              onClick={() => {
+                navigate("/");
+              }}
             />
           </div>
         </Header>
-        <Content
-          className="site-layout"
-          style={{
-            padding: "0 50px",
-            marginTop: 64,
-          }}
-        >
+        <Content className="site-layout">
           <div
             style={{
-              padding: 24,
               minHeight: 380,
-              margin: "16px 0",
             }}
           >
-            <Home></Home>
+            <Outlet />
           </div>
         </Content>
         <Footer
           style={{
             textAlign: "center",
+            background: "#001529",
+            color: "#fff",
           }}
         >
           mShop ©2022 Created by huyhoang189
