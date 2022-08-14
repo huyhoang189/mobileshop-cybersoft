@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const endpoint = "http://localhost:3000/api/v1/user";
+const endpoint = "http://103.163.214.134:3000/api/v1/user/";
 const headers = {
   "content-type": "application/json",
 };
